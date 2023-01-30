@@ -3,9 +3,20 @@
 
 using namespace std;
 
+Livre::Livre(const Livre& source) {
+	cout << "Constructeur de copie: " << source._titre << endl;
+
+	_prix = source._prix;
+	_titre = source._titre;
+	_auteur = source._auteur;
+}
+
+Livre::~Livre() {
+	cout << "Je vais auto-détruire le livre" << endl;
+}
 
 Livre::Livre(string titre, string auteur, float prix) {
-	this->initialiser(titre, auteur, prix);
+	initialiser(titre, auteur, prix);
 }
 
 void Livre::initialiser(string titre, string auteur, float prix) {
